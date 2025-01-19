@@ -20,11 +20,17 @@ def main():
 
     sys.path.append("../FinRL-Library")
 
-
-    from finrl.config import (DATA_SAVE_DIR, INDICATORS, RESULTS_DIR,
-                              TENSORBOARD_LOG_DIR, TEST_END_DATE,
-                              TEST_START_DATE, TRAIN_END_DATE,
-                              TRAIN_START_DATE, TRAINED_MODEL_DIR)
+    from finrl.config import (
+        DATA_SAVE_DIR,
+        INDICATORS,
+        RESULTS_DIR,
+        TENSORBOARD_LOG_DIR,
+        TEST_END_DATE,
+        TEST_START_DATE,
+        TRAIN_END_DATE,
+        TRAIN_START_DATE,
+        TRAINED_MODEL_DIR,
+    )
     from finrl.main import check_and_make_directories
 
     check_and_make_directories(

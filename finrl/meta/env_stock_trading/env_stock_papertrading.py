@@ -37,8 +37,9 @@ class AlpacaPaperTrading:
         if agent == "ppo":
             if drl_lib == "elegantrl":
                 from elegantrl.agents import AgentPPO
-                from elegantrl.train.config import \
-                    Arguments  # bug fix:ModuleNotFoundError: No module named 'elegantrl.run'
+                from elegantrl.train.config import (
+                    Arguments,
+                )  # bug fix:ModuleNotFoundError: No module named 'elegantrl.run'
                 from elegantrl.train.run import init_agent
 
                 # load agent

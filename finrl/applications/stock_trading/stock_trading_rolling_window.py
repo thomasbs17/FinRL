@@ -6,12 +6,19 @@ import pandas as pd
 from stable_baselines3.common.logger import configure
 
 from finrl.agents.stablebaselines3.models import DRLAgent
-from finrl.config import (DATA_SAVE_DIR, INDICATORS, RESULTS_DIR,
-                          TENSORBOARD_LOG_DIR, TRAINED_MODEL_DIR)
+from finrl.config import (
+    DATA_SAVE_DIR,
+    INDICATORS,
+    RESULTS_DIR,
+    TENSORBOARD_LOG_DIR,
+    TRAINED_MODEL_DIR,
+)
 from finrl.config_tickers import DOW_30_TICKER
 from finrl.main import check_and_make_directories
 from finrl.meta.data_processors.func import (
-    calc_train_trade_data, calc_train_trade_starts_ends_if_rolling)
+    calc_train_trade_data,
+    calc_train_trade_starts_ends_if_rolling,
+)
 from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
 from finrl.meta.preprocessor.preprocessors import FeatureEngineer, data_split
 from finrl.meta.preprocessor.yahoodownloader import YahooDownloader

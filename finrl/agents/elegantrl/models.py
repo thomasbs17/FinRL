@@ -108,7 +108,6 @@ class DRLAgent:
 
     @staticmethod
     def DRL_prediction(model_name, cwd, net_dimension, environment, env_args):
-
         gpu_id = 0  # >=0 means GPU ID, -1 means CPU
         agent_class = MODELS[model_name]
         stock_dim = env_args["price_array"].shape[1]

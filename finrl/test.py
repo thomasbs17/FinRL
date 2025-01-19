@@ -67,8 +67,7 @@ def test(
         )
         return episode_total_assets
     elif drl_lib == "stable_baselines3":
-        from finrl.agents.stablebaselines3.models import \
-            DRLAgent as DRLAgent_sb3
+        from finrl.agents.stablebaselines3.models import DRLAgent as DRLAgent_sb3
 
         episode_total_assets = DRLAgent_sb3.DRL_prediction_load_from_file(
             model_name=model_name, environment=env_instance, cwd=cwd

@@ -24,9 +24,16 @@ def main():
 
     import itertools
 
-    from finrl.config import (DATA_SAVE_DIR, RESULTS_DIR, TENSORBOARD_LOG_DIR,
-                              TEST_END_DATE, TEST_START_DATE, TRAIN_END_DATE,
-                              TRAIN_START_DATE, TRAINED_MODEL_DIR)
+    from finrl.config import (
+        DATA_SAVE_DIR,
+        RESULTS_DIR,
+        TENSORBOARD_LOG_DIR,
+        TEST_END_DATE,
+        TEST_START_DATE,
+        TRAIN_END_DATE,
+        TRAIN_START_DATE,
+        TRAINED_MODEL_DIR,
+    )
     from finrl.config_tickers import DOW_30_TICKER
 
     check_and_make_directories(

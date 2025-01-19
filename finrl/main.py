@@ -3,11 +3,21 @@ from __future__ import annotations
 import os
 from argparse import ArgumentParser
 
-from finrl.config import (ALPACA_API_BASE_URL, DATA_SAVE_DIR, ERL_PARAMS,
-                          INDICATORS, RESULTS_DIR, TENSORBOARD_LOG_DIR,
-                          TEST_END_DATE, TEST_START_DATE, TRADE_END_DATE,
-                          TRADE_START_DATE, TRAIN_END_DATE, TRAIN_START_DATE,
-                          TRAINED_MODEL_DIR)
+from finrl.config import (
+    ALPACA_API_BASE_URL,
+    DATA_SAVE_DIR,
+    ERL_PARAMS,
+    INDICATORS,
+    RESULTS_DIR,
+    TENSORBOARD_LOG_DIR,
+    TEST_END_DATE,
+    TEST_START_DATE,
+    TRADE_END_DATE,
+    TRADE_START_DATE,
+    TRAIN_END_DATE,
+    TRAIN_START_DATE,
+    TRAINED_MODEL_DIR,
+)
 from finrl.config_tickers import DOW_30_TICKER
 from finrl.meta.env_stock_trading.env_stocktrading_np import StockTradingEnv
 

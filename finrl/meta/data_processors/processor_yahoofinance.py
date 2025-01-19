@@ -11,13 +11,14 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
+
+# from selenium import webdriver
+# from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.common.by import By
 from stockstats import StockDataFrame as Sdf
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 
 ### Added by aymeric75 for scrap_data function
 

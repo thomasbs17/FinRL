@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from finrl.meta.data_processors.processor_alpaca import AlpacaProcessor as Alpaca
+# from finrl.meta.data_processors.processor_alpaca import AlpacaProcessor as Alpaca
 from finrl.meta.data_processors.processor_wrds import WrdsProcessor as Wrds
 from finrl.meta.data_processors.processor_yahoofinance import (
     YahooFinanceProcessor as YahooFinance,

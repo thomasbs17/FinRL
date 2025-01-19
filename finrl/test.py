@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-from finrl.config import INDICATORS
-from finrl.config import RLlib_PARAMS
-from finrl.config import TEST_END_DATE
-from finrl.config import TEST_START_DATE
+from finrl.config import INDICATORS, TEST_END_DATE, TEST_START_DATE
 from finrl.config_tickers import DOW_30_TICKER
 from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
 
@@ -70,7 +67,8 @@ def test(
         )
         return episode_total_assets
     elif drl_lib == "stable_baselines3":
-        from finrl.agents.stablebaselines3.models import DRLAgent as DRLAgent_sb3
+        from finrl.agents.stablebaselines3.models import \
+            DRLAgent as DRLAgent_sb3
 
         episode_total_assets = DRLAgent_sb3.DRL_prediction_load_from_file(
             model_name=model_name, environment=env_instance, cwd=cwd
@@ -84,9 +82,7 @@ if __name__ == "__main__":
     env = StockTradingEnv
 
     # demo for elegantrl
-    kwargs = (
-        {}
-    )  # in current meta, with respect yahoofinance, kwargs is {}. For other data sources, such as joinquant, kwargs is not empty
+    kwargs = {}  # in current meta, with respect yahoofinance, kwargs is {}. For other data sources, such as joinquant, kwargs is not empty
 
     account_value_erl = test(
         start_date=TEST_START_DATE,

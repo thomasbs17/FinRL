@@ -7,20 +7,14 @@ import pandas as pd
 from stable_baselines3.common.logger import configure
 
 from finrl.agents.stablebaselines3.models import DRLAgent
-from finrl.config import DATA_SAVE_DIR
-from finrl.config import INDICATORS
-from finrl.config import RESULTS_DIR
-from finrl.config import TENSORBOARD_LOG_DIR
-from finrl.config import TRAINED_MODEL_DIR
+from finrl.config import (DATA_SAVE_DIR, INDICATORS, RESULTS_DIR,
+                          TENSORBOARD_LOG_DIR, TRAINED_MODEL_DIR)
 from finrl.config_tickers import DOW_30_TICKER
 from finrl.main import check_and_make_directories
 from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
-from finrl.meta.preprocessor.preprocessors import data_split
-from finrl.meta.preprocessor.preprocessors import FeatureEngineer
+from finrl.meta.preprocessor.preprocessors import FeatureEngineer, data_split
 from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
-from finrl.plot import backtest_stats
-from finrl.plot import get_baseline
-from finrl.plot import plot_return
+from finrl.plot import backtest_stats, get_baseline, plot_return
 
 # matplotlib.use('Agg')
 

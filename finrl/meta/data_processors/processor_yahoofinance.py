@@ -4,21 +4,11 @@ from __future__ import annotations
 
 import datetime
 import time
-from datetime import date
 from datetime import timedelta
-from sqlite3 import Timestamp
-from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Type
-from typing import TypeVar
-from typing import Union
 
 import exchange_calendars as tc
 import numpy as np
 import pandas as pd
-import pytz
 import yfinance as yf
 from bs4 import BeautifulSoup
 from selenium import webdriver

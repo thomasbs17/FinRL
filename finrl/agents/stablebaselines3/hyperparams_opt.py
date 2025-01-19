@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 from typing import Any
-from typing import Dict
 
 import numpy as np
 import optuna
-from stable_baselines3.common.noise import NormalActionNoise
-from stable_baselines3.common.noise import OrnsteinUhlenbeckActionNoise
+from stable_baselines3.common.noise import (NormalActionNoise,
+                                            OrnsteinUhlenbeckActionNoise)
 from torch import nn as nn
 from utils import linear_schedule
 

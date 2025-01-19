@@ -2,21 +2,12 @@ from __future__ import annotations
 
 import os
 from argparse import ArgumentParser
-from typing import List
 
-from finrl.config import ALPACA_API_BASE_URL
-from finrl.config import DATA_SAVE_DIR
-from finrl.config import ERL_PARAMS
-from finrl.config import INDICATORS
-from finrl.config import RESULTS_DIR
-from finrl.config import TENSORBOARD_LOG_DIR
-from finrl.config import TEST_END_DATE
-from finrl.config import TEST_START_DATE
-from finrl.config import TRADE_END_DATE
-from finrl.config import TRADE_START_DATE
-from finrl.config import TRAIN_END_DATE
-from finrl.config import TRAIN_START_DATE
-from finrl.config import TRAINED_MODEL_DIR
+from finrl.config import (ALPACA_API_BASE_URL, DATA_SAVE_DIR, ERL_PARAMS,
+                          INDICATORS, RESULTS_DIR, TENSORBOARD_LOG_DIR,
+                          TEST_END_DATE, TEST_START_DATE, TRADE_END_DATE,
+                          TRADE_START_DATE, TRAIN_END_DATE, TRAIN_START_DATE,
+                          TRAINED_MODEL_DIR)
 from finrl.config_tickers import DOW_30_TICKER
 from finrl.meta.env_stock_trading.env_stocktrading_np import StockTradingEnv
 
@@ -35,7 +26,7 @@ def build_parser():
     parser.add_argument(
         "--mode",
         dest="mode",
-        help="start mode, train, download_data" " backtest",
+        help="start mode, train, download_data backtest",
         metavar="MODE",
         default="train",
     )
@@ -62,9 +53,7 @@ def main() -> int:
         env = StockTradingEnv
 
         # demo for elegantrl
-        kwargs = (
-            {}
-        )  # in current meta, with respect yahoofinance, kwargs is {}. For other data sources, such as joinquant, kwargs is not empty
+        kwargs = {}  # in current meta, with respect yahoofinance, kwargs is {}. For other data sources, such as joinquant, kwargs is not empty
         train(
             start_date=TRAIN_START_DATE,
             end_date=TRAIN_END_DATE,

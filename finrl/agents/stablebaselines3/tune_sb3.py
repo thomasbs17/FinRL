@@ -5,11 +5,7 @@ import datetime
 import joblib
 import optuna
 import pandas as pd
-from stable_baselines3 import A2C
-from stable_baselines3 import DDPG
-from stable_baselines3 import PPO
-from stable_baselines3 import SAC
-from stable_baselines3 import TD3
+from stable_baselines3 import A2C, DDPG, PPO, SAC, TD3
 
 import finrl.agents.stablebaselines3.hyperparams_opt as hpt
 from finrl import config

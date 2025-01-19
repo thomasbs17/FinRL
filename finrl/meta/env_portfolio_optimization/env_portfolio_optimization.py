@@ -12,9 +12,10 @@ from gym import spaces
 from gym.utils import seeding
 
 matplotlib.use("Agg")
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 from stable_baselines3.common.vec_env import DummyVecEnv
-from pathlib import Path
 
 try:
     import quantstats as qs

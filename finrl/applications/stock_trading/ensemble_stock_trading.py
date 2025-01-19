@@ -5,44 +5,27 @@ def main():
     import warnings
 
     warnings.filterwarnings("ignore")
-    import pandas as pd
-    import numpy as np
-    import matplotlib
-    import matplotlib.pyplot as plt
-
     # matplotlib.use('Agg')
     import datetime
-
-    from finrl.config_tickers import DOW_30_TICKER
-    from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
-    from finrl.meta.preprocessor.preprocessors import FeatureEngineer, data_split
-    from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
-    from finrl.agents.stablebaselines3.models import DRLAgent, DRLEnsembleAgent
-    from finrl.plot import backtest_stats, backtest_plot, get_daily_return, get_baseline
-
-    from pprint import pprint
-
     import sys
+
+    import numpy as np
+    import pandas as pd
+
+    from finrl.agents.stablebaselines3.models import DRLEnsembleAgent
+    from finrl.config_tickers import DOW_30_TICKER
+    from finrl.meta.preprocessor.preprocessors import FeatureEngineer
+    from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
+    from finrl.plot import backtest_plot, backtest_stats, get_baseline
 
     sys.path.append("../FinRL-Library")
 
-    import itertools
 
-    import os
+    from finrl.config import (DATA_SAVE_DIR, INDICATORS, RESULTS_DIR,
+                              TENSORBOARD_LOG_DIR, TEST_END_DATE,
+                              TEST_START_DATE, TRAIN_END_DATE,
+                              TRAIN_START_DATE, TRAINED_MODEL_DIR)
     from finrl.main import check_and_make_directories
-    from finrl.config import (
-        DATA_SAVE_DIR,
-        TRAINED_MODEL_DIR,
-        TENSORBOARD_LOG_DIR,
-        RESULTS_DIR,
-        INDICATORS,
-        TRAIN_START_DATE,
-        TRAIN_END_DATE,
-        TEST_START_DATE,
-        TEST_END_DATE,
-        TRADE_START_DATE,
-        TRADE_END_DATE,
-    )
 
     check_and_make_directories(
         [DATA_SAVE_DIR, TRAINED_MODEL_DIR, TENSORBOARD_LOG_DIR, RESULTS_DIR]

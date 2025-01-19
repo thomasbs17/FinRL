@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from typing import List
-
 import gymnasium as gym
 import matplotlib
 import matplotlib.pyplot as plt
@@ -91,9 +89,7 @@ class StockTradingEnv(gym.Env):
         ]  # the initial total asset is calculated by cash + sum (num_share_stock_i * price_stock_i)
         self.rewards_memory = []
         self.actions_memory = []
-        self.state_memory = (
-            []
-        )  # we need sometimes to preserve the state in the middle of trading process
+        self.state_memory = []  # we need sometimes to preserve the state in the middle of trading process
         self.date_memory = [self._get_date()]
         #         self.logger = Logger('results',[CSVOutputFormat])
         # self.reset()
@@ -175,8 +171,9 @@ class StockTradingEnv(gym.Env):
             ):  # check if the stock is able to buy
                 # if self.state[index + 1] >0:
                 # Buy only if the price is > 0 (no missing data in this particular date)
-                available_amount = self.state[0] // (
-                    self.state[index + 1] * (1 + self.buy_cost_pct[index])
+                available_amount = (
+                    self.state[0]
+                    // (self.state[index + 1] * (1 + self.buy_cost_pct[index]))
                 )  # when buying stocks, we should consider the cost of trading when calculating available_amount, or we may be have cash<0
                 # print('available_amount:{}'.format(available_amount))
 

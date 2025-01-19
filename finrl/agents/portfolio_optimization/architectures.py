@@ -3,10 +3,8 @@ from __future__ import annotations
 import numpy as np
 import torch
 from torch import nn
-from torch_geometric.data import Batch
-from torch_geometric.data import Data
-from torch_geometric.nn import RGCNConv
-from torch_geometric.nn import Sequential
+from torch_geometric.data import Batch, Data
+from torch_geometric.nn import RGCNConv, Sequential
 from torch_geometric.utils import to_dense_batch
 
 

@@ -3,25 +3,22 @@ from __future__ import annotations
 
 import ray
 
-assert (
-    ray.__version__ > "2.0.0"
-), "Please install ray 2.2.0 by doing 'pip install ray[rllib] ray[tune] lz4' , lz4 is for population based tuning"
-from pprint import pprint
-
-from ray import tune
-from ray.tune.search import ConcurrencyLimiter
-from ray.rllib.algorithms import Algorithm
-from ray.tune import register_env
-
-from ray.air import RunConfig, FailureConfig, ScalingConfig
-from ray.tune.tune_config import TuneConfig
-from ray.air.config import CheckpointConfig
+assert ray.__version__ > "2.0.0", (
+    "Please install ray 2.2.0 by doing 'pip install ray[rllib] ray[tune] lz4' , lz4 is for population based tuning"
+)
 
 import psutil
+from ray import tune
+from ray.air import FailureConfig, RunConfig
+from ray.air.config import CheckpointConfig
+from ray.rllib.algorithms import Algorithm
+from ray.tune import register_env
+from ray.tune.search import ConcurrencyLimiter
+from ray.tune.tune_config import TuneConfig
 
 psutil_memory_in_bytes = psutil.virtual_memory().total
 ray._private.utils.get_system_memory = lambda: psutil_memory_in_bytes
-from typing import Dict, Optional, Any, List, Union
+from typing import Any
 
 
 class DRLlibv2:

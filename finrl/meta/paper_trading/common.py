@@ -5,25 +5,16 @@ from __future__ import annotations
 
 import os
 import time
-from copy import deepcopy
 
 import gym
 import numpy as np
-import numpy.random as rd
 import pandas as pd
 import torch
 import torch.nn as nn
 from torch import Tensor
 from torch.distributions.normal import Normal
 
-from finrl.config import INDICATORS
-from finrl.config_tickers import DOW_30_TICKER
 from finrl.meta.data_processor import DataProcessor
-from finrl.meta.env_stock_trading.env_stocktrading_np import StockTradingEnv
-from finrl.plot import backtest_plot
-from finrl.plot import backtest_stats
-from finrl.plot import get_baseline
-from finrl.plot import get_daily_return
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
 # PPO
@@ -554,7 +545,6 @@ def get_rewards_and_steps(
 # -----------------------------------------------------------------------------------------------------------------------------------------
 # DRL Agent Class
 
-import torch
 
 # from elegantrl.agents import AgentA2C
 
@@ -689,14 +679,6 @@ class DRLAgent:
 # -----------------------------------------------------------------------------------------------------------------------------------------
 # Train & Test Functions
 
-from finrl.config import ERL_PARAMS
-from finrl.config import INDICATORS
-from finrl.config import RLlib_PARAMS
-from finrl.config import SAC_PARAMS
-from finrl.config import TRAIN_END_DATE
-from finrl.config import TRAIN_START_DATE
-from finrl.config_tickers import DOW_30_TICKER
-from finrl.meta.data_processor import DataProcessor
 
 # construct environment
 
@@ -753,11 +735,6 @@ def train(
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
 
-from finrl.config import INDICATORS
-from finrl.config import RLlib_PARAMS
-from finrl.config import TEST_END_DATE
-from finrl.config import TEST_START_DATE
-from finrl.config_tickers import DOW_30_TICKER
 
 
 def test(
@@ -816,15 +793,8 @@ def test(
 
 import alpaca_trade_api as tradeapi
 import exchange_calendars as tc
-import numpy as np
-import pandas as pd
 import pytz
 import yfinance as yf
-import matplotlib.ticker as ticker
-import matplotlib.dates as mdates
-from datetime import datetime as dt
-from finrl.plot import backtest_stats
-import matplotlib.pyplot as plt
 
 
 def get_trading_days(start, end):

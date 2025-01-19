@@ -1,8 +1,7 @@
 from __future__ import annotations
 
 from collections import deque
-from random import randint
-from random import random
+from random import randint, random
 
 import numpy as np
 from torch.utils.data.dataset import IterableDataset

@@ -1,14 +1,10 @@
 from __future__ import annotations
 
-from concurrent.futures import ProcessPoolExecutor
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
-from datetime import timedelta as td
 
 import exchange_calendars as tc
 import numpy as np
 import pandas as pd
-import pytz
 from alpaca.data.historical import StockHistoricalDataClient
 from alpaca.data.requests import StockBarsRequest
 from alpaca.data.timeframe import TimeFrame
@@ -74,13 +70,11 @@ class AlpacaProcessor:
                 for ticker in ticker_list
             ]
         for future in futures:
-
             bars = future.result()
             # fix start
             # Reorganize the dataframes to be in original alpaca_trade_api structure
             # Rename the existing 'symbol' column if it exists
             if not bars.empty:
-
                 # Now reset the index
                 bars.reset_index(inplace=True)
 

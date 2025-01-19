@@ -9,10 +9,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from .architectures import EIIE
-from .utils import apply_portfolio_noise
-from .utils import PVM
-from .utils import ReplayBuffer
-from .utils import RLDataset
+from .utils import PVM, ReplayBuffer, RLDataset, apply_portfolio_noise
 
 
 class PolicyGradient:

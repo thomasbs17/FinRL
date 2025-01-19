@@ -2,44 +2,31 @@ from __future__ import annotations
 
 
 def main():
-    import pandas as pd
-    import numpy as np
-    import matplotlib
-    import matplotlib.pyplot as plt
-
     # matplotlib.use('Agg')
     import datetime
+    import sys
+
+    import matplotlib
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pandas as pd
+    from stable_baselines3.common.logger import configure
 
     from finrl import config
-    from finrl import config_tickers
-    from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
-    from finrl.meta.preprocessor.preprocessors import FeatureEngineer, data_split
-    from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
     from finrl.agents.stablebaselines3.models import DRLAgent
-    from finrl.plot import backtest_stats, backtest_plot, get_daily_return, get_baseline
     from finrl.main import check_and_make_directories
-    from pprint import pprint
-    from stable_baselines3.common.logger import configure
-    import sys
+    from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
+    from finrl.meta.preprocessor.preprocessors import data_split
+    from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
+    from finrl.plot import backtest_plot, backtest_stats, get_baseline
 
     sys.path.append("../FinRL")
 
     import itertools
 
-    from finrl.config import (
-        DATA_SAVE_DIR,
-        TRAINED_MODEL_DIR,
-        TENSORBOARD_LOG_DIR,
-        RESULTS_DIR,
-        INDICATORS,
-        TRAIN_START_DATE,
-        TRAIN_END_DATE,
-        TEST_START_DATE,
-        TEST_END_DATE,
-        TRADE_START_DATE,
-        TRADE_END_DATE,
-    )
-
+    from finrl.config import (DATA_SAVE_DIR, RESULTS_DIR, TENSORBOARD_LOG_DIR,
+                              TEST_END_DATE, TEST_START_DATE, TRAIN_END_DATE,
+                              TRAIN_START_DATE, TRAINED_MODEL_DIR)
     from finrl.config_tickers import DOW_30_TICKER
 
     check_and_make_directories(
@@ -327,8 +314,6 @@ def main():
     print(len(trade_data))
 
     import gym
-    import matplotlib
-    import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
     from gym import spaces

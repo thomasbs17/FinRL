@@ -12,7 +12,6 @@ import pyfolio
 from pyfolio import timeseries
 
 from finrl import config
-from finrl.meta.data_processors.func import date2str
 from finrl.meta.data_processors.func import str2date
 from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
 

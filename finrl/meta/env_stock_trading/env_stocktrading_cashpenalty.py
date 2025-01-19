@@ -10,8 +10,7 @@ import numpy as np
 import pandas as pd
 from gym import spaces
 from stable_baselines3.common import logger
-from stable_baselines3.common.vec_env import DummyVecEnv
-from stable_baselines3.common.vec_env import SubprocVecEnv
+from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv
 
 matplotlib.use("Agg")
 
@@ -223,9 +222,9 @@ class StockTradingEnvCashpenalty(gym.Env):
             reason,
             f"{self.currency}{'{:0,.0f}'.format(float(self.account_information['cash'][-1]))}",
             f"{self.currency}{'{:0,.0f}'.format(float(self.account_information['total_assets'][-1]))}",
-            f"{terminal_reward*100:0.5f}%",
-            f"{(gl_pct - 1)*100:0.5f}%",
-            f"{cash_pct*100:0.2f}%",
+            f"{terminal_reward * 100:0.5f}%",
+            f"{(gl_pct - 1) * 100:0.5f}%",
+            f"{cash_pct * 100:0.2f}%",
         ]
         self.episode_history.append(rec)
         print(self.template.format(*rec))
